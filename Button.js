@@ -5,8 +5,8 @@ function logRandom() {
 }
 
 export default function Button(props) {
-  // const handleClick = () => setCounter(prevCounter => counter + prevCounter);
-  return <button onClick={props.incrementCounter}>+</button>;
+  const handleClick = () => props.incrementCounter(props.increment);
+  return <button onClick={handleClick}>+{props.increment}</button>;
 }
 
 // export default Button;
