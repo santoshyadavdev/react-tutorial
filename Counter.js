@@ -5,7 +5,7 @@ import Display from "./Display";
 export default function Counter() {
   const [counter, setCounter] = React.useState(5);
   const handleClick = (increment) =>
-    setCounter(prevCounter => counter + increment);
+    setCounter(counter + increment);
   return (
     <div>
       <Button incrementCounter={handleClick} increment={1} />
