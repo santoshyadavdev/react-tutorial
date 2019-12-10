@@ -18,7 +18,7 @@ export default function Card() {
       <td>{todo.id}</td>
       <td>{todo.userId}</td>
       <td>{todo.title}</td>
-      <td>{todo.body}</td>
+      <td>{todo.completed}</td>
     </tr>
   ));
 
@@ -29,7 +29,7 @@ export default function Card() {
           <th>Id</th>
           <th>UserId</th>
           <th>Title</th>
-          <th>Body</th>
+          <th>Completed</th>
         </tr>
       </thead>
       <tbody>
