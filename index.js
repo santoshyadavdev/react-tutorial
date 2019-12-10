@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import Hello from "./Hello";
 import Counter from "./Counter";
+import Card from './Card/Card';
 import "./style.css";
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
       <div>
         <Counter />
         <Hello name={this.state.name} />
+        <Card />
         <p>Start editing to see some magic happen :)</p>
       </div>
     );
