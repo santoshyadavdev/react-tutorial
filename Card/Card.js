@@ -3,11 +3,11 @@ import React from "react";
 export default function Card() {
   const [todoList, setTodoList] = React.useState([]);
 
-const getTodoList = async () => {
-  const apiCall = await  fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await apiCall.json();
-   setTodoList(data);
-}
+  const getTodoList = async () => {
+    const apiCall = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await apiCall.json();
+    setTodoList(data);
+  };
 
   React.useEffect(() => {
     getTodoList();
@@ -18,7 +18,7 @@ const getTodoList = async () => {
       <td>{todo.id}</td>
       <td>{todo.userId}</td>
       <td>{todo.title}</td>
-      <td>{todo.completed? 'True': 'Fl'}</td>
+      <td>{todo.completed ? "True" : "False"}</td>
     </tr>
   ));
 
@@ -32,9 +32,7 @@ const getTodoList = async () => {
           <th>Completed</th>
         </tr>
       </thead>
-      <tbody>
-        {todoRows}
-      </tbody>
+      <tbody>{todoRows}</tbody>
     </table>
   );
 }
