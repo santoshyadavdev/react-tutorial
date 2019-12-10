@@ -3,22 +3,22 @@ import React from "react";
 export default function Card() {
   const [todoList, setTodoList] = React.useState([]);
 
+const getTodoList = async () => {
+  const apiCall = await  fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await apiCall.json();
+   setTodoList(data);
+}
+
   React.useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos", {
-      method: "GET"
-    })
-      .then(res => res.json())
-      .then(data => {
-        setTodoList(data);
-      });
-  });
+    getTodoList();
+  }, todoList);
 
   const todoRows = todoList.map(todo => (
     <tr key={todo.id}>
       <td>{todo.id}</td>
       <td>{todo.userId}</td>
       <td>{todo.title}</td>
-      <td>{todo.completed}</td>
+      <td>{todo.completed? 'True': 'Fl'}</td>
     </tr>
   ));
 
